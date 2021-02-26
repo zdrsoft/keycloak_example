@@ -40,7 +40,7 @@ services:
     ports:
       - "5000:5000"
     networks:
-      - gerdau
+      - test
     volumes:
       - ./api:/app
     environment:
@@ -48,10 +48,9 @@ services:
       REALM: ${REALM}
       CLIENT_ID: ${CLIENT_ID}
       CLIENT_SECRET: ${CLIENT_SECRET}
-      OPENID_URL: http://keycloak:8080/auth/realms/gerdau/protocol/openid-connect
+      OPENID_URL: http://keycloak:8080/auth/realms/test/protocol/openid-connect
       ADMIN_USER: ${ADMIN_USER}
       ADMIN_PASS: ${ADMIN_PASS}
-      
 
 volumes:
   postgres_data:
